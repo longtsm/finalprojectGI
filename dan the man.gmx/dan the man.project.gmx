@@ -4,23 +4,155 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\s_1_up</sound>
+    <sound>sound\s_fight</sound>
+    <sound>sound\s_puch</sound>
+    <sound>sound\s_kick</sound>
+    <sound>sound\sou_lazer</sound>
+    <sound>sound\sou_walk</sound>
+    <sound>sound\sou_jump</sound>
+    <sound>sound\sou_room0</sound>
+    <sound>sound\sou_room5</sound>
+    <sound>sound\sou_the_end</sound>
+  </sounds>
   <sprites name="sprites">
+    <sprites name="ememy2">
+      <sprite>sprites\spr_enemy2_walk</sprite>
+      <sprite>sprites\spr_enemy2_run</sprite>
+      <sprite>sprites\spr_enemy2_idle</sprite>
+      <sprite>sprites\spr_enemy2_hit</sprite>
+      <sprite>sprites\spr_enemy_dead</sprite>
+      <sprite>sprites\spr_enemy2_attack</sprite>
+    </sprites>
+    <sprites name="enemy3">
+      <sprite>sprites\spr_enemy3_idle</sprite>
+      <sprite>sprites\spr_enemy3_walk</sprite>
+      <sprite>sprites\spr_enemy3_run</sprite>
+      <sprite>sprites\spr_enemy3_attack</sprite>
+      <sprite>sprites\spr_enemy3_hit</sprite>
+      <sprite>sprites\spr_enemy3_dead</sprite>
+    </sprites>
     <sprites name="dan">
       <sprite>sprites\spr_dan_idle</sprite>
       <sprite>sprites\spr_dan_walk</sprite>
       <sprite>sprites\spr_dan_jump</sprite>
       <sprite>sprites\spr_dan_attack</sprite>
-    </sprites>
-    <sprites name="yoshi">
-      <sprite>sprites\spr_yoshi_idle</sprite>
+      <sprite>sprites\spr_dan_hit</sprite>
+      <sprite>sprites\spr_fly_down_attack</sprite>
+      <sprite>sprites\spr_fire_body</sprite>
+      <sprite>sprites\spr_dan_dragon</sprite>
+      <sprite>sprites\spr_dan_dead</sprite>
     </sprites>
     <sprites name="stickman">
-      <sprite>sprites\spr_dak_idle</sprite>
+      <sprite>sprites\spr_dark_idle</sprite>
+      <sprite>sprites\spr_dark_attack_up</sprite>
+      <sprite>sprites\spr_dark_fake</sprite>
+      <sprite>sprites\spr_dark_run</sprite>
+      <sprite>sprites\spr_dark_hit</sprite>
+      <sprite>sprites\scr_dark_attack</sprite>
+      <sprite>sprites\spr_dark_arngy_tp</sprite>
+      <sprite>sprites\spr_dark_put_player</sprite>
     </sprites>
+    <sprites name="enemy1">
+      <sprite>sprites\spr_enemy1_run</sprite>
+      <sprite>sprites\spr_enemy1_walk</sprite>
+      <sprite>sprites\spr_enemy1_ATTACK</sprite>
+      <sprite>sprites\spr_enemy1_idle</sprite>
+      <sprite>sprites\spr_enemy_hit</sprite>
+      <sprite>sprites\spr_enemy1_dead</sprite>
+    </sprites>
+    <sprites name="other">
+      <sprite>sprites\spr_rever</sprite>
+      <sprite>sprites\sprite54</sprite>
+      <sprite>sprites\spr_grass</sprite>
+      <sprite>sprites\spr_dirt</sprite>
+      <sprite>sprites\sprite39</sprite>
+      <sprite>sprites\spr_water</sprite>
+      <sprite>sprites\sprite60</sprite>
+      <sprite>sprites\obj_dealdmg</sprite>
+      <sprite>sprites\sprite55</sprite>
+      <sprite>sprites\sprite58</sprite>
+      <sprite>sprites\sprite59</sprite>
+      <sprite>sprites\sprite56</sprite>
+      <sprite>sprites\sprite53</sprite>
+      <sprites name="egg">
+        <sprite>sprites\dino_sakura</sprite>
+        <sprite>sprites\spr_tree</sprite>
+        <sprite>sprites\spr_story_mode</sprite>
+        <sprite>sprites\sprite30</sprite>
+        <sprite>sprites\spr_play</sprite>
+      </sprites>
+    </sprites>
+    <sprites name="enemy4">
+      <sprite>sprites\spr_enemy4_idle</sprite>
+      <sprite>sprites\spr_enemy4_walk</sprite>
+      <sprite>sprites\spr_enemy4_hit</sprite>
+      <sprite>sprites\spr_enemy4_run</sprite>
+      <sprite>sprites\spr_enemy4_turbidity</sprite>
+      <sprite>sprites\spr_enemy4_attack</sprite>
+      <sprite>sprites\spr_enemy4_dead</sprite>
+    </sprites>
+    <sprite>sprites\spr_dmg_enemy</sprite>
   </sprites>
-  <backgrounds name="background"/>
+  <backgrounds name="background">
+    <background>background\background0</background>
+    <background>background\background1</background>
+    <background>background\background2</background>
+    <background>background\background3</background>
+    <background>background\background4</background>
+    <background>background\background6</background>
+    <background>background\background7</background>
+    <background>background\background8</background>
+    <background>background\background9</background>
+    <background>background\background10</background>
+    <background>background\background11</background>
+    <background>background\background12</background>
+    <background>background\back_end</background>
+  </backgrounds>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <scripts name="dan">
+      <script>scripts\scr_idle.gml</script>
+      <script>scripts\scr_jump.gml</script>
+      <script>scripts\scr_hit.gml</script>
+      <script>scripts\scr_attack.gml</script>
+      <script>scripts\scr_move.gml</script>
+      <script>scripts\scr_input.gml</script>
+    </scripts>
+    <scripts name="enemy1">
+      <script>scripts\scr_enemy1_attack.gml</script>
+      <script>scripts\scr_enemy1_run.gml</script>
+      <script>scripts\scr_enemy1_idle.gml</script>
+    </scripts>
+  </scripts>
+  <objects name="objects">
+    <object>objects\obj_block_grass</object>
+    <object>objects\obj_dirt</object>
+    <object>objects\obj_dino_sakura</object>
+    <object>objects\obj_play</object>
+    <object>objects\obj_stoymode</object>
+    <object>objects\obj_water</object>
+    <object>objects\obj_river</object>
+    <object>objects\obj_door_room3</object>
+    <object>objects\object8</object>
+    <object>objects\object9</object>
+    <object>objects\obj_dan</object>
+    <object>objects\obj_dmg</object>
+    <object>objects\obj_ground</object>
+    <object>objects\obj_enemy1</object>
+    <object>objects\obj_1_up</object>
+    <object>objects\object15</object>
+    <object>objects\obj_dmg_enemy</object>
+    <object>objects\obj_music_main</object>
+  </objects>
+  <rooms name="rooms">
+    <room>rooms\room6</room>
+    <room>rooms\room0</room>
+    <room>rooms\room4</room>
+    <room>rooms\room5</room>
+    <room>rooms\room_end</room>
+  </rooms>
   <help>
     <rtf>help.rtf</rtf>
   </help>
