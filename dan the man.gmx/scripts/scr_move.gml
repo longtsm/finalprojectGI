@@ -15,6 +15,13 @@ if (input_attack) {
     state = player_states.attack
 }
 
+if (input_skill_1) {
+    state = player_states.skill_1
+}
+
+if (input_skill_2) {
+    state = player_states.skill_2
+}
+
 moveX = (input_right - input_left)*nor_spd
 image_speed = 24/room_speed
-

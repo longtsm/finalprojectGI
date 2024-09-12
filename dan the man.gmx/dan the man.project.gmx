@@ -83,6 +83,7 @@
         <sprite>sprites\sprite30</sprite>
         <sprite>sprites\spr_play</sprite>
       </sprites>
+      <sprite>sprites\sprite61</sprite>
     </sprites>
     <sprites name="enemy4">
       <sprite>sprites\spr_enemy4_idle</sprite>
@@ -117,6 +118,8 @@
       <script>scripts\scr_jump.gml</script>
       <script>scripts\scr_hit.gml</script>
       <script>scripts\scr_attack.gml</script>
+      <script>scripts\scr_skill_2.gml</script>
+      <script>scripts\scr_skill_1.gml</script>
       <script>scripts\scr_move.gml</script>
       <script>scripts\scr_input.gml</script>
     </scripts>
@@ -139,12 +142,13 @@
     <object>objects\object9</object>
     <object>objects\obj_dan</object>
     <object>objects\obj_dmg</object>
+    <object>objects\obj_dmg_enemy</object>
     <object>objects\obj_ground</object>
     <object>objects\obj_enemy1</object>
     <object>objects\obj_1_up</object>
-    <object>objects\object15</object>
-    <object>objects\obj_dmg_enemy</object>
+    <object>objects\obj_music_end</object>
     <object>objects\obj_music_main</object>
+    <object>objects\obj_enemy_block</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room6</room>

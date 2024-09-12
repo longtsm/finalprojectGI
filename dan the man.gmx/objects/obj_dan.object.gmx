@@ -35,6 +35,8 @@ enum player_states{
     jump, // 4
     attack,
     hit,
+    skill_1,
+    skill_2
 }
 
 // Movement
@@ -44,10 +46,32 @@ moveY = 0
 nor_spd = 3
 run_spd = 5
 count = 0
+hp = 100
+hp_max = 100
 
 // Init state
 state = player_states.idle
 </string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>701</id>
+        <kind>0</kind>
+        <userelative>-1</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_set_score</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>0</kind>
+            <string>0</string>
           </argument>
         </arguments>
       </action>
@@ -88,6 +112,12 @@ switch (state) {
     case (player_states.hit):
         scr_hit()
         break;
+    case (player_states.skill_1):
+        scr_skill_1()
+        break;
+    case (player_states.skill_2):
+        scr_skill_2()
+        break;
 }
 
 // Physics
@@ -122,33 +152,102 @@ y += moveY
           </argument>
         </arguments>
       </action>
-    </event>
-    <event eventtype="4" ename="obj_dmg_enemy">
       <action>
         <libid>1</libid>
-        <id>541</id>
+        <id>612</id>
         <kind>0</kind>
         <userelative>0</userelative>
-        <isquestion>0</isquestion>
+        <isquestion>-1</isquestion>
         <useapplyto>-1</useapplyto>
         <exetype>1</exetype>
-        <functionname>action_sprite_set</functionname>
+        <functionname>action_if_variable</functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
-            <kind>5</kind>
-            <sprite>spr_dan_hit</sprite>
+            <kind>0</kind>
+            <string>hp</string>
           </argument>
           <argument>
             <kind>0</kind>
             <string>0</string>
           </argument>
           <argument>
-            <kind>0</kind>
-            <string>1</string>
+            <kind>4</kind>
+            <string>3</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>422</id>
+        <kind>1</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>224</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_another_room</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>11</kind>
+            <room>room_end</room>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>424</id>
+        <kind>2</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_dmg_enemy">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>hp -= 5
+</string>
           </argument>
         </arguments>
       </action>
@@ -167,40 +266,16 @@ y += moveY
         <isnot>0</isnot>
       </action>
     </event>
-    <event eventtype="5" enumb="32">
+    <event eventtype="8" enumb="64">
       <action>
         <libid>1</libid>
-        <id>211</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_sound</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>6</kind>
-            <sound>s_puch</sound>
-          </argument>
-          <argument>
-            <kind>3</kind>
-            <string>0</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>301</id>
+        <id>703</id>
         <kind>0</kind>
         <userelative>-1</userelative>
         <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
+        <useapplyto>0</useapplyto>
         <exetype>1</exetype>
-        <functionname>action_set_alarm</functionname>
+        <functionname>action_draw_score</functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
@@ -208,35 +283,40 @@ y += moveY
         <arguments>
           <argument>
             <kind>0</kind>
-            <string>30</string>
+            <string>0</string>
           </argument>
           <argument>
-            <kind>4</kind>
+            <kind>0</kind>
             <string>0</string>
+          </argument>
+          <argument>
+            <kind>1</kind>
+            <string>Score: </string>
           </argument>
         </arguments>
       </action>
+    </event>
+    <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
-        <id>211</id>
-        <kind>0</kind>
+        <id>603</id>
+        <kind>7</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_sound</functionname>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
-            <kind>6</kind>
-            <sound>s_puch</sound>
-          </argument>
-          <argument>
-            <kind>3</kind>
-            <string>0</string>
+            <kind>1</kind>
+            <string>///DRAW HP BAR
+draw_self() ;
+draw_healthbar (x-30, y-60, x+30, y-80, hp/hp_max*100, c_black, c_red , c_lime, 0, true, true);
+</string>
           </argument>
         </arguments>
       </action>
